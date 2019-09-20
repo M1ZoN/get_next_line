@@ -1,0 +1,6 @@
+Hello this is my file
+That I want to read with my get next line
+Let's Begin!
+
+Will it do the same
+or just skip that line?
