@@ -6,12 +6,11 @@
 /*   By: mislamov <mislamov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 23:16:40 by mislamov          #+#    #+#             */
-/*   Updated: 2019/09/19 23:50:17 by mislamov         ###   ########.fr       */
+/*   Updated: 2019/09/20 15:15:57 by mislamov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <fcntl.h>
 
 int		main(int argc, char **argv)
 {

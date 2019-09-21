@@ -6,7 +6,7 @@
 /*   By: mislamov <mislamov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 15:00:24 by mislamov          #+#    #+#             */
-/*   Updated: 2019/09/19 23:52:07 by mislamov         ###   ########.fr       */
+/*   Updated: 2019/09/20 17:06:00 by mislamov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		helper(char **str, char **line, const int fd)
 	else if (str[fd][index] == '\0')
 	{
 		*line = ft_strdup(str[fd]);
-		free(str[fd]);
+		ft_strdel(&str[fd]);
 	}
 	return (1);
 }
@@ -54,12 +54,12 @@ int		get_next_line(const int fd, char **line)
 		temp = ft_strjoin(str[fd], buffer);
 		free(str[fd]);
 		str[fd] = temp;
-		if (ft_strchr(str[fd], '\n'))
+		if (ft_strrchr(str[fd], '\n'))
 			break ;
 	}
 	if (byte_size < 0)
 		return (-1);
-	else if (!str[fd] && !byte_size)
+	else if (str[fd][0] == '\0' && byte_size == 0)
 		return (0);
-	return (helper(line, str, fd));
+	return (helper(str, line, fd));
 }
